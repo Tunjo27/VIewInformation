@@ -1,0 +1,21 @@
+<div class="toolbar" role="banner">
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <img width="35" alt="Systig Logo" src="./assets/_images/logo-03.png">
+            <span>Nombre Proceso</span>
+            <span class="spacer"></span>
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                    <span>Datos usuario</span>
+                </button>
+                <button mat-menu-item>
+                    <mat-icon>logout</mat-icon>
+                    <span>Cierre de sesion</span>
+                </button>
+            </mat-menu>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</div>

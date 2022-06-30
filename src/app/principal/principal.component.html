@@ -1,0 +1,39 @@
+<!--banner-->
+<app-toolbar></app-toolbar>
+
+<!--encabezado-->
+<div class="content">
+  <div class="container-fluid">
+    <div class="encabezado">
+      <div class="encabezado-etapa">
+        <span>Etapa</span>
+      </div>
+      <div class="encabezado-datos">
+        <div><span>Nombre Empresa: </span>{{encabezado.nombreEmpresa}}</div>
+        <div><span>Tipo Documento: </span>{{encabezado.tipoDocumento}}</div>
+        <div><span>Identificacion Empresa: </span>{{encabezado.identificacionEmpresa}}</div>
+        <div><span>Etapa Proceso: </span>{{encabezado.etapaProceso}}</div>
+        <div><span>Fecha Creacion Etapa: </span>{{encabezado.fechaCreacionEtapa}}</div>
+        <div><span>Fecha Limite Etapa: </span>{{encabezado.fechaLimiteEtapa}}</div>
+        <div><span>Solicitante: </span>{{encabezado.solicitante}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+
+<!--cuerpo-->
+<app-table></app-table>
+<hr>
+
+<!--seccion accion-->
+<div class="botonesaformulario">
+  <button mat-flat-button color="primary" style="margin-right: 100px;">Rechazar</button>
+  <button mat-flat-button color="primary" (click)="openDialog()">Gestionar</button>
+</div>
+<hr>
+
+<!--pie-->
+<footer class="footer">
+  <p>Copyright &copy; Systig, todos los derechos reservados.</p>
+</footer>

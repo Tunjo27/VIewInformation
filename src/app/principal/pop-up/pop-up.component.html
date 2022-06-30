@@ -1,0 +1,70 @@
+<h2>
+    <div><span>Nombre Etapa: </span>{{titulo.nombreEtapa}}</div>
+    <div><span>Etapa Proceso: </span>{{titulo.etapaProceso}}</div>
+</h2>
+
+<div style="width: 100%; height: 50px; margin-top: 1%; text-align: center" class="text-dark bg-light rounded">
+    <h1 class="font-weight-bold">AGREGAR</h1>
+</div>
+
+<form [formGroup]="registerForm" (ngSubmit)="submit()">
+    <div class="form-group">
+        <label for="nombreEmpresa">Nombre Empresa: </label>
+        <input type="text" class="form-control" formControlName="nombreEmpresa" [class.is-invalid]="nombreEmpresaNoValido">
+        <small *ngIf="nombreEmpresaNoValido" class="text-danger">
+            (El nombre de la Empresa no puede quedar vacío y debe tener como mínimo 3 caracteres)
+        </small>     
+    </div>
+    <div class="form-group">
+        <label for="tipoDocumento">Tipo Documento: </label>
+        <input type="text" class="form-control" formControlName="tipoDocumento" [class.is-invalid]="tipoDocumentoNoValido">
+        <small *ngIf="tipoDocumentoNoValido" class="text-danger">
+            (El tipo de documento no puede quedar vacío y debe tener como mínimo 3 caracteres)
+        </small>
+    </div>
+    <div class="form-group">
+        <label for="identificacionEmpresa">Numero Documento: </label>
+        <input type="text" class="form-control" formControlName="identificacionEmpresa" [class.is-invalid]="identificacionEmpresaNoValido">
+        <small *ngIf="identificacionEmpresaNoValido" class="text-danger">
+            (La identificacion de la Empresa no puede quedar vacía y debe tener como mínimo 3 caracteres)
+        </small>
+        <!--<span *ngIf="this.registerForm.get('identificacionEmpresa').errors?.maxlength">
+            (Debe tener como máximo 40 caracteres)
+        </span>-->
+    </div>
+    <div class="form-group">
+        <label for="etapaProceso">Etapa Proceso: </label>
+        <input type="text" class="form-control" formControlName="etapaProceso" [class.is-invalid]="etapaProcesoNoValido">
+        <small *ngIf="etapaProcesoNoValido" class="text-danger">
+            (La etapa del proceso no puede quedar vacía y debe tener como mínimo 3 caracteres)
+        </small>
+    </div>
+    <div class="form-group">
+        <label for="fechaCreacionEtapa">Fecha Creacion Etapa: </label>
+        <input type="text" class="form-control" formControlName="fechaCreacionEtapa" [class.is-invalid]="fechaCreacionEtapaNoValido">
+        <small *ngIf="fechaCreacionEtapaNoValido" class="text-danger">
+            (La fecha de creacion de la etapa no puede quedar vacía y debe tener como mínimo 3 caracteres)
+        </small>
+    </div>
+    <div class="form-group">
+        <label for="fechaLimiteEtapa">Fecha Limite Etapa: </label>
+        <input type="text" class="form-control" formControlName="fechaLimiteEtapa" [class.is-invalid]="fechaLimiteEtapaNoValido">
+        <small *ngIf="fechaLimiteEtapaNoValido" class="text-danger">
+            (La fecha limite de la etapa no puede quedar vacía y debe tener como mínimo 3 caracteres)
+        </small>
+    </div>
+    <div class="form-group">
+        <label for="solicitante">Solicitante: </label>
+        <input type="text" class="form-control" formControlName="solicitante" [class.is-invalid]="solicitanteNoValido">
+        <small *ngIf="solicitanteNoValido" class="text-danger">
+            (El solicitante no puede quedar vacío y debe tener como mínimo 3 caracteres)
+        </small>
+    </div>
+
+    <div>{{resultado}}</div>
+    
+    <div mat-dialog-actions>
+        <button mat-flat-button color="primary" (click)="onClickNO()">Cancelar</button>
+        <button mat-flat-button color="primary" type="submit">Procesar</button>
+    </div>
+</form>
